@@ -1,0 +1,5 @@
+{
+	"name": "TeX Container",
+	"image": "git.uni-wuppertal.de:4567/rwegener/tex-container:latest"
+	"extensions": ["james-yu.latex-workshop"]
+}
