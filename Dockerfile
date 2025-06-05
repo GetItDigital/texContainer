@@ -27,7 +27,11 @@ RUN apt-get update && apt-get -y upgrade \
 RUN apt-get -y install gnuplot 
 RUN apt-get -y install openssh-client
 RUN apt-get -y install inkscape
-    
+
+# install imagemagick and ffmpeg for video creation
+RUN apt-get -y install imagemagick ffmpeg
+RUN sed -i.bak '/<policy domain="coder"/d' /etc/ImageMagick-6/policy.xml 
+
 # latexindent modules
 RUN apt-get install --no-install-recommends -y curl
 RUN curl -L http://cpanmin.us | perl - App::cpanminus \
@@ -35,6 +39,10 @@ RUN curl -L http://cpanmin.us | perl - App::cpanminus \
     && cpanm YAML::Tiny \
     && cpanm File::HomeDir \
     && cpanm Unicode::GCString
+
+#Gradio Client for Fishaudio
+RUN apt-get -y install python3-pip
+RUN pip install --break-system-packages gradio_client
 
 # Clean up
 RUN apt-get autoremove -y \
