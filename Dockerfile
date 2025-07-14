@@ -21,7 +21,8 @@ RUN apt-get update && apt-get -y upgrade \
     biber chktex latexmk make python3-pygments python3-pkg-resources \
     texlive-lang-german \
     texlive-fonts-recommended \
-    texlive-science
+    texlive-science \
+    texlive-bibtex-extra
 
 #install extra tools
 RUN apt-get -y install gnuplot 
