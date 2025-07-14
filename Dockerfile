@@ -28,6 +28,7 @@ RUN apt-get update && apt-get -y upgrade \
 RUN apt-get -y install gnuplot 
 RUN apt-get -y install openssh-client
 RUN apt-get -y install inkscape
+RUN apt-get -y install pdf2svg
 
 # install imagemagick and ffmpeg for video creation
 RUN apt-get -y install imagemagick ffmpeg
